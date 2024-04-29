@@ -24,5 +24,8 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		
+	if Input.is_action_just_pressed("ui_down") && is_on_floor():
+		position.y += 5
+	
 	move_and_slide()
